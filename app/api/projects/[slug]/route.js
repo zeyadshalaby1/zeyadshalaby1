@@ -4,7 +4,8 @@ import { getProjectBySlugServer } from '@/lib/supabase';
 // GET /api/projects/[slug] - Fetch project by slug
 export async function GET(request, { params }) {
   try {
-    const { slug } = params;
+    const resolvedParams = await params;
+    const { slug } = resolvedParams;
 
     if (!slug) {
       return NextResponse.json(
