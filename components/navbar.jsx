@@ -10,7 +10,7 @@ const navLinks = [
   { href: "/#about", label: "عنّي", icon: User2 },
   { href: "/#services", label: "خدماتي", icon: Briefcase },
   { href: "/#projects", label: "مشاريع", icon: Folder },
-  { href: "/courses", label: "دورات", icon: BookOpen },
+  { href: "/courses", label: "كورس ووردبريس", icon: BookOpen },
   { href: "/#contact", label: "تواصل", icon: MessageCircle },
 ];
 
