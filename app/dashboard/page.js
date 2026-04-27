@@ -13,14 +13,17 @@ export default async function DashboardPage() {
 
   // 1. Get role from session claims (Fastest)
   let role = sessionClaims?.metadata?.role;
-  console.log("Dashboard: Role from session:", role);
+  // Debug: Role from session (remove in production)
+  // console.log("Dashboard: Role from session:", role);
 
   // 2. If role is missing in session, fetch live data from Clerk
   if (!role) {
-    console.log("Dashboard: Role missing in session, fetching live data...");
+  // Debug: Role missing in session (remove in production)
+  // console.log("Dashboard: Role missing in session, fetching live data...");
     const user = await clerkClient.users.getUser(userId);
     role = user.publicMetadata?.role;
-    console.log("Dashboard: Live role from Clerk:", role);
+  // Debug: Live role from Clerk (remove in production)
+  // console.log("Dashboard: Live role from Clerk:", role);
 
     // 3. If STILL missing, then it's a new user, assign 'student'
     if (!role) {

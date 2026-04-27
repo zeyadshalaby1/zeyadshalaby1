@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/pre-build-check.js && next build",
+    "build:skip-check": "next build",
     "start": "next start",
     "lint": "eslint",
-    "sync": "velite"
+    "sync": "velite",
+    "pre-build-check": "node scripts/pre-build-check.js"
   },
   "dependencies": {
     "@clerk/nextjs": "^7.2.7",
